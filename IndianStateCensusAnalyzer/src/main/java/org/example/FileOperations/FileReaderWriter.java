@@ -14,6 +14,7 @@ import java.util.regex.Pattern;
 
 /**
  * Purpose : To perform all file operations on Files
+ *
  */
 public class FileReaderWriter {
 
@@ -100,6 +101,5 @@ public class FileReaderWriter {
         }
         return flag;
     }
-
 
 }
