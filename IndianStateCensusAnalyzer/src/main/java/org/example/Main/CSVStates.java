@@ -1,14 +1,13 @@
-/***************************************************************************************************
+/***************************************************************************************
  *
  * Purpose :
- * UC 1    : Ability for the analyser to load the Indian States Census
- *           Information from a csv file - Create a StateCensusAnalyser Class
- *           to load the State Census CSV Data
- *           - Create CSVStateCensus Class to load the CSV Data
- *           - Use Iterator to load the data
- *           - Check with StateCensusAnalyser to ensure number of records matches
+ * UC2 : Ability for the analyser to load the Indian States Code
+ *       Information from a csv file
+ *       - Create CSVStates Class to load the CSV Data
+ *       - Use Iterator to load the data
+ *       - Check with StateCensusAnalyser to ensure number of record matches
  *
- ***************************************************************************************************/
+ *****************************************************************************************/
 
 package org.example.Main;
 
@@ -19,13 +18,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class IndianStateCensusAnalyzer {
-
-    public static void main(String[] args) throws CustomizedExceptions {
-        String filePath = "C:\\Users\\tusha\\Desktop\\IndianStateCensusAnalyzer\\src\\main\\java\\org\\example\\Files\\StateCensusData.csv";
-
-        IndianStateCensusAnalyzer id = new IndianStateCensusAnalyzer();
-
+public class CSVStates {
+    public static void main(String[] args) {
+        String filePath = "C:\\Users\\tusha\\Desktop\\IndianStateCensusAnalyzer\\src\\main\\java\\org\\example\\Files\\StateCode.csv";
+        CSVStates csvStates = new CSVStates();
     }
 
     /**
@@ -65,8 +61,8 @@ public class IndianStateCensusAnalyzer {
     public  boolean csvHeaderChecker(String filePath) throws IOException, CustomizedExceptions {
         FileReaderWriter fileReaderWriter = new FileReaderWriter();
 
-        //To compare actual csv headers and with headers in arraylist
-        ArrayList<String> stringArrayList = new ArrayList<>(Arrays.asList("State","Population","Area","Density"));
+        // To compare actual CSV Headers with the headers in list
+        ArrayList<String> stringArrayList = new ArrayList<>(Arrays.asList("SrNo","State","Name","TIN","code"));
         boolean flag = fileReaderWriter.checkCSVHeader(filePath, stringArrayList);
         return flag;
     }
